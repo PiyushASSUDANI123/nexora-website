@@ -6,6 +6,7 @@ import Hero from '../components/Hero';
 import ValueStrip from '../components/ValueStrip';
 import FaqAccordion from '../components/FaqAccordion';
 import ParallaxPhilosophy from '../components/ParallaxPhilosophy';
+import SuccessStories from '../components/SuccessStories';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -286,43 +287,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ===== TESTIMONIALS ===== */}
-      <section className="section-padding testimonials-section">
-        <div className="container">
-          <motion.p 
-            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
-            className="about-label text-center"
-          >
-            07. REAL STORIES
-          </motion.p>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="section-title-large text-center mb-5"
-          >
-            What Our <span className="text-royal">Students</span> Say
-          </motion.h2>
-          <div className="testimonials-grid">
-            {[
-              { quote: "Before this course, saving money felt impossible for me. Now I know exactly where my money goes and where it should go.", author: "Student, Balotra" },
-              { quote: "I was about to buy a plot only because everyone said the area is growing. After Class 7, I checked it properly and saved myself from a big mistake.", author: "Student, Balotra" },
-              { quote: "The best part is that everything is explained so simply. Even my wife, who never took interest in money matters, now sits and discusses our planning with me.", author: "Student, Balotra" }
-            ].map((t, idx) => (
-              <motion.div 
-                key={idx}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                custom={idx}
-                className="testimonial-card"
-              >
-                <p className="quote">"{t.quote}"</p>
-                <div className="author">— {t.author}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ===== SUCCESS STORIES ===== */}
+      <SuccessStories />
 
       {/* ===== FAQ SECTION ===== */}
       <FaqAccordion />
